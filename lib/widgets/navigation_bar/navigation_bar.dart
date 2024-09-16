@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class NavigationBar extends StatelessWidget {
+class CustomNavigationBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,11 +16,11 @@ class NavigationBar extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              _NavBarItem('Episodes'),
-              SizedBox(
+              const _NavBarItem('Episodes'),
+              const SizedBox(
                 width: 60,
               ),
-              _NavBarItem('About'),
+              const _NavBarItem('About'),
             ],
           )
         ],
@@ -31,16 +31,13 @@ class NavigationBar extends StatelessWidget {
 
 class _NavBarItem extends StatelessWidget {
   final String title;
-  const _NavBarItem(
-    this.title, {
-    Key key,
-  }) : super(key: key);
+  const _NavBarItem(this.title, {super.key});
 
   @override
   Widget build(BuildContext context) {
     return Text(
       title,
-      style: TextStyle(fontSize: 18),
+      style: const TextStyle(fontSize: 18),
     );
   }
 }
